@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pendaftaran Online</title>
+    <link rel="stylesheet" href="assets/css/form.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Form Dukungan</h1>
+    </header>
+    <div class="container">
+        <form action="#" method="post">
+            <div class="daftar">
+                <div class="form-group">
+                    <label>Pilih Daerah:</label>
+                    <select class="form-control" name="daerah" id="daerahSelect">
+                        <option value="" selected disabled>Daerah</option>
+                        <option value="serpong">Serpong</option>
+                        <option value="setu">Setu</option>
+                    </select>
+                </div>
+
+                <!-- Kolom lainnya, awalnya disembunyikan -->
+                <div class="form-group" id="kolomNama">
+                    <label for="">Nama:</label>
+                    <input type="text" name="nama" placeholder="ISI NAMA LENGKAP ANDA" />
+                </div>
+
+                <div class="form-group" id="kolomUmur">
+                    <label for="">Umur:</label>
+                    <select class="form-control">
+                        <option value="" selected disabled>Berapa usia anda?</option>
+                        <option value="serpong">Dibawah 17 tahun</option>
+                        <option value="setu">17 Tahun atau lebih</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="kolomEmail">
+                    <label for="">Email:</label>
+                    <input type="email" name="email" placeholder="email@domain.com" />
+                </div>
+
+                <div class="form-group" id="kolomNoHP">
+                    <label for="">No. HP:</label>
+                    <input type="phone" name="no_hp" placeholder="081234567890" />
+                </div>
+
+                <div class="form-group" id="kolomAlamat">
+                    <label for="">Alamat:</label>
+                    <textarea rows="10" name="alamat" placeholder="ISI ALAMAT LENGKAP"></textarea>
+                </div>
+                <a href="index.html" class="btn-kirim">kirim</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const daerahSelect = document.getElementById('daerahSelect');
+        const kolomNama = document.getElementById('kolomNama');
+        const kolomUmur = document.getElementById('kolomUmur');
+        const kolomEmail = document.getElementById('kolomEmail');
+        const kolomNoHP = document.getElementById('kolomNoHP');
+        const kolomAlamat = document.getElementById('kolomAlamat');
+
+        // Sembunyikan kolom awalnya
+        kolomNama.style.display = 'none';
+        kolomUmur.style.display = 'none';
+        kolomEmail.style.display = 'none';
+        kolomNoHP.style.display = 'none';
+        kolomAlamat.style.display = 'none';
+
+        // Tampilkan kolom setelah memilih daerah
+        daerahSelect.addEventListener('change', function () {
+            if (daerahSelect.value !== "") {
+                kolomNama.style.display = 'block';
+                kolomUmur.style.display = 'block';
+                kolomEmail.style.display = 'block';
+                kolomNoHP.style.display = 'block';
+                kolomAlamat.style.display = 'block';
+            } else {
+                kolomNama.style.display = 'none';
+                kolomUmur.style.display = 'none';
+                kolomEmail.style.display = 'none';
+                kolomNoHP.style.display = 'none';
+                kolomAlamat.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
